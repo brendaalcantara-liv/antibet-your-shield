@@ -1,0 +1,1545 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AntiBet Alerta — Você tem o poder de parar.</title>
+  <meta name="description" content="Ferramenta gratuita de saúde pública que detecta acessos a sites de apostas e te dá 10 segundos para reconsiderar. Privado, sem anúncios, para sempre." />
+  <meta name="author" content="AntiBet Alerta" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="AntiBet Alerta — Você tem o poder de parar." />
+  <meta property="og:description" content="Ferramenta gratuita que detecta acessos a sites de apostas no seu celular e te dá 10 segundos para reconsiderar. Antes que o impulso vença." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwMCIgaGVpZ2h0PSI2MzAiIHZpZXdCb3g9IjAgMCAxMjAwIDYzMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImJnIiB4MT0iMCIgeTE9IjAiIHgyPSIxMjAwIiB5Mj0iNjMwIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzFBNjZDOCIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzNEMjM3MyIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMjAwIiBoZWlnaHQ9IjYzMCIgZmlsbD0idXJsKCNiZykiLz48dGV4dCB4PSI2MDAiIHk9IjI2MCIgZm9udC1mYW1pbHk9IkludGVyLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iNzIiIGZvbnQtd2VpZ2h0PSI4MDAiIGZpbGw9IiNmZmZmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlZvY8OqIHRlbSBvIHBvZGVyIGRlIHBhcmFyLjwvdGV4dD48dGV4dCB4PSI2MDAiIHk9IjM0MCIgZm9udC1mYW1pbHk9IkludGVyLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMzAiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC44KSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+QW50aUJldCBBbGVydGEgLS0gRmVycmFtZW50YSBkZSBTYcO6ZGUgUMO6YmxpY2E8L3RleHQ+PC9zdmc+" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="AntiBet Alerta — Você tem o poder de parar." />
+  <meta name="twitter:description" content="Ferramenta gratuita que detecta acessos a sites de apostas no seu celular e te dá 10 segundos para reconsiderar." />
+  <meta name="twitter:image" content="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwMCIgaGVpZ2h0PSI2MzAiIHZpZXdCb3g9IjAgMCAxMjAwIDYzMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImJnIiB4MT0iMCIgeTE9IjAiIHgyPSIxMjAwIiB5Mj0iNjMwIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzFBNjZDOCIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzNEMjM3MyIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMjAwIiBoZWlnaHQ9IjYzMCIgZmlsbD0idXJsKCNiZykiLz48dGV4dCB4PSI2MDAiIHk9IjI2MCIgZm9udC1mYW1pbHk9IkludGVyLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iNzIiIGZvbnQtd2VpZ2h0PSI4MDAiIGZpbGw9IiNmZmZmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlZvY8OqIHRlbSBvIHBvZGVyIGRlIHBhcmFyLjwvdGV4dD48dGV4dCB4PSI2MDAiIHk9IjM0MCIgZm9udC1mYW1pbHk9IkludGVyLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMzAiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC44KSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+QW50aUJldCBBbGVydGEgLS0gRmVycmFtZW50YSBkZSBTYcO6ZGUgUMO6YmxpY2E8L3RleHQ+PC9zdmc+" />
+
+  <!-- Favicon — logo oficial -->
+  <link rel="icon" type="image/png" href="antibet-your-shield/icon.png" />
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ============================================================
+       CSS CUSTOM PROPERTIES — Design tokens / Paleta
+    ============================================================ */
+    :root {
+      --color-primary:   #1A73E8;
+      --color-secondary: #34A853;
+      --color-accent:    #FBBC04;
+      --color-bg:        #F8F9FA;
+      --color-bg-alt:    #F0F4FF;
+      --color-text:      #202124;
+      --color-text-muted:#5F6368;
+      --color-negative:  #EA4335;
+      --color-footer-bg: #202124;
+      --color-footer-fg: #BDC1C6;
+      --color-border:    #DADCE0;
+      --color-card:      #FFFFFF;
+      --color-amber-soft:#FFF8E1;
+
+      --hero-gradient: linear-gradient(135deg, #1A66C8 0%, #3D2373 100%);
+
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --radius-full: 9999px;
+
+      --shadow-sm: 0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+      --shadow-md: 0 4px 12px rgba(0,0,0,.10), 0 2px 6px rgba(0,0,0,.06);
+      --shadow-lg: 0 12px 32px rgba(0,0,0,.12), 0 4px 12px rgba(0,0,0,.08);
+
+      --max-width: 1200px;
+      --section-py: 96px;
+    }
+
+    /* ============================================================
+       RESET & BASE
+    ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--color-text);
+      background: var(--color-bg);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+
+    img, svg { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+    button { cursor: pointer; font-family: inherit; border: none; background: none; }
+
+    /* ============================================================
+       TYPOGRAPHY
+    ============================================================ */
+    h1, h2, h3, h4, h5, h6 {
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+
+    .mono {
+      font-family: 'Courier New', Courier, monospace;
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* ============================================================
+       LAYOUT HELPERS
+    ============================================================ */
+    .container {
+      width: 100%;
+      max-width: var(--max-width);
+      margin-inline: auto;
+      padding-inline: 24px;
+    }
+
+    .section-alt { background: var(--color-bg-alt); }
+    .section-white { background: var(--color-card); }
+
+    /* ============================================================
+       SCROLL REVEAL
+       Elements start invisible and slide up; JS adds .visible
+    ============================================================ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .65s ease-out, transform .65s ease-out;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-d1 { transition-delay: .10s; }
+    .reveal-d2 { transition-delay: .20s; }
+    .reveal-d3 { transition-delay: .30s; }
+    .reveal-d4 { transition-delay: .40s; }
+    .reveal-d5 { transition-delay: .50s; }
+    .reveal-d6 { transition-delay: .60s; }
+
+    /* ============================================================
+       BUTTONS
+    ============================================================ */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 32px;
+      border-radius: var(--radius-full);
+      font-weight: 600;
+      font-size: 1rem;
+      line-height: 1;
+      transition: transform .2s ease, box-shadow .2s ease, opacity .2s ease;
+      white-space: nowrap;
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+    .btn:active { transform: translateY(0); }
+
+    .btn-primary {
+      background: var(--color-secondary);
+      color: #fff;
+      box-shadow: var(--shadow-md);
+      font-size: 1.1rem;
+      padding: 18px 40px;
+    }
+    .btn-ghost {
+      background: transparent;
+      color: rgba(255,255,255,.9);
+      font-weight: 500;
+    }
+    .btn-ghost:hover { color: #fff; box-shadow: none; transform: none; opacity: .85; }
+
+    /* ============================================================
+       NAV (sticky top bar)
+    ============================================================ */
+    nav.site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(26,102,200,.96);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(255,255,255,.12);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+      max-width: var(--max-width);
+      margin-inline: auto;
+      padding-inline: 24px;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #fff;
+      font-weight: 700;
+      font-size: 1rem;
+    }
+    .nav-logo-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .nav-logo-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .nav-cta {
+      background: var(--color-secondary);
+      color: #fff;
+      padding: 8px 20px;
+      border-radius: var(--radius-full);
+      font-size: .875rem;
+      font-weight: 600;
+      transition: opacity .2s;
+    }
+    .nav-cta:hover { opacity: .88; }
+
+    /* ============================================================
+       [1] HERO SECTION
+    ============================================================ */
+    #hero {
+      background: var(--hero-gradient);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding: 80px 0;
+    }
+
+    /* Decorative background circles */
+    #hero::before,
+    #hero::after {
+      content: '';
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    #hero::before {
+      width: 560px; height: 560px;
+      top: -12%; right: -6%;
+      background: rgba(255,255,255,.04);
+    }
+    #hero::after {
+      width: 700px; height: 700px;
+      bottom: -20%; left: -12%;
+      background: rgba(255,255,255,.03);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 56px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-text { text-align: center; }
+
+    .hero-text h1 {
+      font-size: clamp(2.2rem, 6vw, 3.8rem);
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 20px;
+      text-wrap: balance;
+    }
+
+    .hero-text p {
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      color: rgba(255,255,255,.82);
+      max-width: 520px;
+      margin: 0 auto 36px;
+      line-height: 1.7;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: center;
+    }
+
+    /* ---- Phone Mockup (pure CSS/SVG) ---- */
+    .phone-wrap { display: flex; justify-content: center; }
+
+    .phone {
+      position: relative;
+      width: 248px;
+      height: 504px;
+      border-radius: 42px;
+      border: 6px solid rgba(255,255,255,.22);
+      background: #0D1117;
+      overflow: hidden;
+      box-shadow: 0 24px 64px rgba(0,0,0,.5), 0 4px 16px rgba(0,0,0,.3);
+      animation: float 4s ease-in-out infinite;
+    }
+
+    /* Notch */
+    .phone::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 96px; height: 26px;
+      background: #0D1117;
+      border-radius: 0 0 18px 18px;
+      z-index: 2;
+    }
+
+    .phone-screen {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 20px;
+      text-align: center;
+    }
+
+    /* Countdown ring */
+    .countdown-ring {
+      position: relative;
+      width: 120px;
+      height: 120px;
+      margin-bottom: 20px;
+    }
+    .countdown-ring svg { width: 100%; height: 100%; }
+    .countdown-number {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      font-weight: 800;
+      color: #fff;
+      font-family: 'Courier New', monospace;
+    }
+
+    .phone-message {
+      color: rgba(255,255,255,.88);
+      font-size: .82rem;
+      line-height: 1.55;
+      max-width: 170px;
+      margin-bottom: 20px;
+    }
+
+    .phone-actions {
+      display: flex;
+      gap: 8px;
+    }
+    .phone-btn {
+      padding: 7px 14px;
+      border-radius: var(--radius-full);
+      font-size: .72rem;
+      font-weight: 600;
+    }
+    .phone-btn-close {
+      background: var(--color-secondary);
+      color: #fff;
+    }
+    .phone-btn-block {
+      border: 1px solid rgba(255,255,255,.28);
+      color: rgba(255,255,255,.7);
+    }
+
+    /* Float animation */
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50%       { transform: translateY(-14px); }
+    }
+
+    /* ============================================================
+       [2] PROBLEM SECTION
+    ============================================================ */
+    #problema {
+      padding: var(--section-py) 0;
+      background: var(--color-card);
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+    .section-header h2 {
+      font-size: clamp(1.7rem, 4vw, 2.5rem);
+      margin-bottom: 12px;
+      text-wrap: balance;
+    }
+    .section-header .subtitle {
+      font-size: 1.1rem;
+      color: var(--color-text-muted);
+      font-weight: 500;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      margin-bottom: 48px;
+    }
+
+    .stat-card {
+      background: var(--color-bg);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 32px 28px;
+      box-shadow: var(--shadow-sm);
+      transition: box-shadow .3s ease, transform .3s ease;
+    }
+    .stat-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-3px);
+    }
+    .stat-card .stat-icon {
+      font-size: 2.2rem;
+      margin-bottom: 16px;
+      display: block;
+    }
+    .stat-card .stat-value {
+      font-size: 1.9rem;
+      font-weight: 800;
+      color: var(--color-primary);
+      display: block;
+      margin-bottom: 8px;
+      font-family: 'Courier New', monospace;
+    }
+    .stat-card p {
+      color: var(--color-text-muted);
+      font-size: .95rem;
+      line-height: 1.6;
+    }
+
+    .problem-quote {
+      text-align: center;
+      max-width: 680px;
+      margin-inline: auto;
+      font-size: 1.05rem;
+      color: var(--color-text);
+      line-height: 1.75;
+      font-style: italic;
+      margin-bottom: 28px;
+    }
+    .problem-footnote {
+      text-align: center;
+      font-size: .75rem;
+      color: #9AA0A6;
+      max-width: 680px;
+      margin-inline: auto;
+      line-height: 1.6;
+    }
+
+    /* ============================================================
+       [3] HOW IT WORKS SECTION
+    ============================================================ */
+    #como-funciona {
+      padding: var(--section-py) 0;
+      background: var(--color-bg-alt);
+    }
+
+    .timeline {
+      max-width: 660px;
+      margin-inline: auto;
+      position: relative;
+    }
+
+    .timeline-step {
+      display: flex;
+      gap: 24px;
+      margin-bottom: 48px;
+      position: relative;
+    }
+    .timeline-step:last-child { margin-bottom: 0; }
+
+    .step-icon-wrap {
+      flex-shrink: 0;
+      width: 64px; height: 64px;
+      border-radius: 18px;
+      background: rgba(26,115,232,.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      position: relative;
+      z-index: 1;
+      transition: background .3s ease, transform .3s ease;
+    }
+    .timeline-step:hover .step-icon-wrap {
+      background: rgba(26,115,232,.18);
+      transform: scale(1.06);
+    }
+
+    .step-content { padding-top: 8px; }
+    .step-content h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .step-content p {
+      color: var(--color-text-muted);
+      font-size: .95rem;
+      line-height: 1.7;
+    }
+
+    /* ============================================================
+       [4] FEATURES SECTION
+    ============================================================ */
+    #funcionalidades {
+      padding: var(--section-py) 0;
+      background: var(--color-card);
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .feature-card {
+      background: var(--color-bg);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 32px 28px;
+      transition: border-color .3s ease, box-shadow .3s ease, transform .3s ease;
+    }
+    .feature-card:hover {
+      border-color: rgba(26,115,232,.3);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-3px);
+    }
+    .feature-icon {
+      font-size: 2rem;
+      margin-bottom: 16px;
+      display: block;
+      transition: transform .3s ease;
+    }
+    .feature-card:hover .feature-icon { transform: scale(1.12); }
+    .feature-card h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .feature-card p {
+      color: var(--color-text-muted);
+      font-size: .9rem;
+      line-height: 1.7;
+    }
+
+    /* ============================================================
+       [5] PRIVACY SECTION
+    ============================================================ */
+    #privacidade {
+      padding: var(--section-py) 0;
+      background: var(--color-card);
+    }
+
+    .privacy-inner {
+      max-width: 760px;
+      margin-inline: auto;
+      border-left: 5px solid var(--color-secondary);
+      padding-left: 40px;
+    }
+
+    .privacy-inner h2 {
+      font-size: clamp(1.7rem, 4vw, 2.4rem);
+      margin-bottom: 36px;
+    }
+
+    .privacy-list { margin-bottom: 36px; }
+    .privacy-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 20px;
+      font-size: .97rem;
+      line-height: 1.7;
+    }
+    .privacy-list li:last-child { margin-bottom: 0; }
+
+    .check-icon {
+      flex-shrink: 0;
+      width: 22px; height: 22px;
+      margin-top: 2px;
+      color: var(--color-secondary);
+    }
+
+    .privacy-highlight {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--color-secondary);
+      font-style: italic;
+    }
+
+    /* ============================================================
+       [6] TECHNOLOGY SECTION
+    ============================================================ */
+    #tecnologia {
+      padding: var(--section-py) 0;
+      background: var(--color-card);
+    }
+
+    .tech-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 32px;
+      align-items: stretch;
+    }
+
+    .tech-card {
+      background: var(--color-bg);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 32px 28px;
+      display: flex;
+      flex-direction: column;
+    }
+    .tech-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 24px;
+    }
+
+    /* Detection layers */
+    .layer-row { margin-bottom: 18px; }
+    .layer-row:last-child { margin-bottom: 0; }
+    .layer-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 6px;
+    }
+    .layer-name { font-size: .875rem; font-weight: 600; }
+    .layer-latency { font-size: .75rem; color: var(--color-text-muted); font-family: 'Courier New', monospace; }
+    .layer-track {
+      height: 10px;
+      background: var(--color-border);
+      border-radius: var(--radius-full);
+      overflow: hidden;
+    }
+    .layer-bar {
+      height: 100%;
+      background: var(--color-primary);
+      border-radius: var(--radius-full);
+      width: 0%;
+      transition: width 1s ease-out;
+    }
+    .layer-caption {
+      margin-top: 16px;
+      font-size: .78rem;
+      color: var(--color-text-muted);
+      line-height: 1.55;
+      font-style: italic;
+    }
+
+    /* Tech pillars */
+    .pillars-list { display: flex; flex-direction: column; gap: 24px; }
+    .pillar {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    .pillar-icon {
+      flex-shrink: 0;
+      width: 44px; height: 44px;
+      border-radius: 12px;
+      background: rgba(26,115,232,.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .pillar-icon svg { width: 22px; height: 22px; color: var(--color-primary); }
+    .pillar-content h4 { font-size: .95rem; font-weight: 700; margin-bottom: 4px; }
+    .pillar-content p { font-size: .85rem; color: var(--color-text-muted); line-height: 1.6; }
+
+    /* ============================================================
+       [7] SUPPORT SECTION
+    ============================================================ */
+    #apoio {
+      padding: var(--section-py) 0;
+      background: var(--color-bg-alt);
+    }
+
+    .support-box {
+      background: var(--color-amber-soft);
+      border: 1px solid rgba(251,188,4,.35);
+      border-radius: var(--radius-md);
+      padding: 36px 32px;
+      max-width: 680px;
+      margin: 0 auto 28px;
+    }
+    .support-box > p:first-child {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
+    .support-resource {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      margin-bottom: 20px;
+    }
+    .support-resource:last-child { margin-bottom: 0; }
+    .support-resource .res-icon { font-size: 1.6rem; flex-shrink: 0; line-height: 1; }
+    .support-resource h4 { font-size: 1rem; font-weight: 700; margin-bottom: 2px; }
+    .support-resource p, .support-resource a {
+      font-size: .9rem;
+      color: var(--color-text-muted);
+      line-height: 1.5;
+    }
+    .support-resource a { color: var(--color-primary); text-decoration: underline; }
+    .support-resource a:hover { opacity: .8; }
+
+    .support-disclaimer {
+      text-align: center;
+      max-width: 520px;
+      margin-inline: auto;
+      font-size: .93rem;
+      color: var(--color-text-muted);
+      line-height: 1.7;
+    }
+
+    /* ============================================================
+       [8] CTA / DOWNLOAD SECTION
+    ============================================================ */
+    #download {
+      background: var(--hero-gradient);
+      padding: var(--section-py) 0;
+      text-align: center;
+    }
+
+    #download h2 {
+      font-size: clamp(1.5rem, 4vw, 2.4rem);
+      color: #fff;
+      font-weight: 800;
+      margin-bottom: 36px;
+      text-wrap: balance;
+    }
+
+    .download-actions {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 36px;
+    }
+
+    .download-note {
+      font-size: .8rem;
+      color: rgba(255,255,255,.45);
+      margin-top: 8px;
+    }
+
+    /* ============================================================
+       [9] FOOTER
+    ============================================================ */
+    footer {
+      background: var(--color-footer-bg);
+      color: var(--color-footer-fg);
+      padding: 64px 0 40px;
+    }
+
+    .footer-inner { text-align: center; }
+
+    .footer-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+    .footer-logo-icon {
+      width: 40px; height: 40px;
+      border-radius: 11px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .footer-logo-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .footer-logo-name {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #fff;
+    }
+    .footer-tagline {
+      font-size: .9rem;
+      color: rgba(255,255,255,.48);
+      margin-bottom: 32px;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+    .footer-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-size: .8rem;
+      font-weight: 500;
+      color: rgba(255,255,255,.65);
+      padding: 8px 18px;
+      border-radius: var(--radius-full);
+      border: 1px solid rgba(255,255,255,.15);
+      background: rgba(255,255,255,.06);
+      transition: color .2s, border-color .2s, background .2s;
+      letter-spacing: .01em;
+    }
+    .footer-links a:hover {
+      color: #fff;
+      border-color: rgba(255,255,255,.35);
+      background: rgba(255,255,255,.12);
+    }
+
+    .footer-meta {
+      font-size: .75rem;
+      color: rgba(255,255,255,.3);
+      line-height: 1.7;
+      max-width: 680px;
+      margin-inline: auto;
+    }
+    .footer-meta p + p { margin-top: 6px; }
+    .footer-legal {
+      font-size: .68rem;
+      color: rgba(255,255,255,.22);
+      line-height: 1.6;
+      max-width: 740px;
+      margin: 16px auto 0;
+    }
+
+    /* ============================================================
+       RESPONSIVE — tablet (640px+)
+    ============================================================ */
+    @media (min-width: 640px) {
+      .hero-actions { flex-direction: row; justify-content: center; }
+      .stats-grid { grid-template-columns: repeat(3, 1fr); }
+      .features-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    /* ============================================================
+       RESPONSIVE — desktop (1024px+)
+    ============================================================ */
+    @media (min-width: 1024px) {
+      .hero-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 80px;
+      }
+      .hero-text { text-align: left; }
+      .hero-text p { margin-left: 0; }
+      .hero-actions { justify-content: flex-start; }
+      .phone-wrap { justify-content: flex-end; }
+      .features-grid { grid-template-columns: repeat(3, 1fr); }
+      .tech-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    /* ============================================================
+       REDUCED MOTION
+    ============================================================ */
+    @media (prefers-reduced-motion: reduce) {
+      .phone { animation: none; }
+      .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+      .layer-bar { transition: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+       NAV — Barra de navegação superior
+  ============================================================ -->
+  <nav class="site-nav" aria-label="Navegação principal">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo" aria-label="AntiBet Alerta — início">
+        <div class="nav-logo-icon" aria-hidden="true">
+          <img src="antibet-your-shield/icon.png" alt="" />
+        </div>
+        AntiBet Alerta
+      </a>
+      <a href="#download" class="nav-cta">Baixar grátis</a>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ============================================================
+         [1] HERO — Apresentação principal
+    ============================================================ -->
+    <section id="hero" aria-label="Apresentação do AntiBet Alerta">
+      <div class="container">
+        <div class="hero-grid">
+
+          <!-- Texto -->
+          <div class="hero-text">
+            <h1>Você tem o poder de parar.</h1>
+            <p>
+              AntiBet Alerta detecta acessos a sites de apostas no seu próprio celular
+              e te dá 10 segundos para reconsiderar. Antes que o impulso vença.
+            </p>
+            <div class="hero-actions">
+              <a href="#download" class="btn btn-primary" aria-label="Baixar grátis no Google Play Store">
+                <!-- Play Store icon SVG inline -->
+                <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true">
+                  <path d="M3.18 23.82A1.5 1.5 0 0 1 2 22.38V1.62A1.5 1.5 0 0 1 3.18.18L14.94 12 3.18 23.82Zm2.74-1.6 11.36-6.56-2.82-2.82-8.54 9.38Zm13.3-7.68 2.18-1.26a1.5 1.5 0 0 0 0-2.56L19.22 9.46l-3 3 3 3Zm-2.74-9.38L5.92 1.78l8.54 9.38 2.82-2.82Z"/>
+                </svg>
+                Baixar grátis no Google Play Store
+              </a>
+              <a href="#como-funciona" class="btn btn-ghost">
+                Ver como funciona ↓
+              </a>
+            </div>
+          </div>
+
+          <!-- Mockup de celular Android (100% CSS/SVG) -->
+          <div class="phone-wrap" aria-hidden="true">
+            <div class="phone" role="img" aria-label="Tela de intervenção do app com contagem regressiva">
+              <div class="phone-screen">
+                <!-- Contador regressivo animado em SVG -->
+                <div class="countdown-ring">
+                  <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="60" cy="60" r="52" stroke="rgba(26,115,232,.25)" stroke-width="4"/>
+                    <circle
+                      cx="60" cy="60" r="52"
+                      stroke="#34A853"
+                      stroke-width="5"
+                      stroke-linecap="round"
+                      stroke-dasharray="327"
+                      stroke-dashoffset="82"
+                      transform="rotate(-90 60 60)"
+                    />
+                  </svg>
+                  <div class="countdown-number">8</div>
+                </div>
+                <p class="phone-message">
+                  Você é mais forte<br>que esse impulso.
+                </p>
+                <div class="phone-actions">
+                  <span class="phone-btn phone-btn-close">Fechar</span>
+                  <span class="phone-btn phone-btn-block">Bloquear 1h</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         [2] PROBLEMA — O Brasil e as apostas
+    ============================================================ -->
+    <section id="problema" class="section-white" aria-label="O problema das apostas no Brasil">
+      <div class="container">
+
+        <div class="section-header reveal">
+          <h2>O Brasil virou a maior bancada de apostas do mundo.</h2>
+          <p class="subtitle">Não é falta de força de vontade. É neurociência.</p>
+        </div>
+
+        <!-- 3 cards de estatísticas com contadores animados -->
+        <div class="stats-grid">
+          <article class="stat-card reveal reveal-d1">
+            <span class="stat-icon" aria-hidden="true">💸</span>
+            <span class="stat-value mono" data-counter="30" data-prefix="R$&nbsp;" data-suffix="&nbsp;bilhões">R$&nbsp;0&nbsp;bilhões</span>
+            <p>transferidos por PIX todo mês para sites de apostas (Banco Central, 2025)</p>
+          </article>
+
+          <article class="stat-card reveal reveal-d2">
+            <span class="stat-icon" aria-hidden="true">🧠</span>
+            <span class="stat-value mono" data-counter="11" data-prefix="~" data-suffix="&nbsp;milhões">~0&nbsp;milhões</span>
+            <p>de brasileiros apostam de forma que coloca sua saúde e finanças em risco (LENAD III — Unifesp / FAPESP, 2024)</p>
+          </article>
+
+          <article class="stat-card reveal reveal-d3">
+            <span class="stat-icon" aria-hidden="true">📈</span>
+            <span class="stat-value mono" data-counter="20" data-suffix="×">0×</span>
+            <p>mais atendimentos por transtorno do jogo no SUS em 5 anos (Ministério da Saúde, 2024)</p>
+          </article>
+        </div>
+
+        <p class="problem-quote reveal reveal-d4">
+          "Sentir o impulso de apostar não é fraqueza — é o seu cérebro respondendo
+          a um sistema projetado para isso. O que importa é o que acontece nos próximos 10 segundos."
+        </p>
+
+        <p class="problem-footnote reveal reveal-d5">
+          OMS classifica o Transtorno de Jogo (CID-11: 6C50) como dependência comportamental.
+          Fontes: Banco Central do Brasil, Unifesp/FAPESP, Ministério da Saúde.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         [3] COMO FUNCIONA — Timeline de 5 passos
+    ============================================================ -->
+    <section id="como-funciona" class="section-alt" aria-label="Como funciona o AntiBet Alerta">
+      <div class="container">
+
+        <div class="section-header reveal">
+          <h2>Do impulso ao controle — em tempo real.</h2>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-step reveal reveal-d1">
+            <div class="step-icon-wrap" aria-hidden="true">🔍</div>
+            <div class="step-content">
+              <h3>Detecta</h3>
+              <p>Você abre o Chrome. O AntiBet lê a barra de endereço — e só ela. Nada mais é acessado.</p>
+            </div>
+          </div>
+
+          <div class="timeline-step reveal reveal-d2">
+            <div class="step-icon-wrap" aria-hidden="true">⏱️</div>
+            <div class="step-content">
+              <h3>Pausa</h3>
+              <p>Uma tela de intervenção aparece com contagem regressiva de 10 segundos. Técnica de <em>urge surfing</em> da psicologia comportamental (TCC e ACT).</p>
+            </div>
+          </div>
+
+          <div class="timeline-step reveal reveal-d3">
+            <div class="step-icon-wrap" aria-hidden="true">💪</div>
+            <div class="step-content">
+              <h3>Decide</h3>
+              <p>Você pode fechar, se auto-bloquear por 1 hora ou continuar. A escolha é sempre sua — o app não bloqueia nada sem o seu comando.</p>
+            </div>
+          </div>
+
+          <div class="timeline-step reveal reveal-d4">
+            <div class="step-icon-wrap" aria-hidden="true">📧</div>
+            <div class="step-content">
+              <h3>Alerta</h3>
+              <p>Você recebe um e-mail registrando o horário. Sem julgamento. Só transparência com você mesmo.</p>
+            </div>
+          </div>
+
+          <div class="timeline-step reveal reveal-d5">
+            <div class="step-icon-wrap" aria-hidden="true">🤝</div>
+            <div class="step-content">
+              <h3>Apoio</h3>
+              <p>Opcionalmente, um parceiro de confiança também é notificado. <em>Accountability</em> real, sem vigilância.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         [4] FUNCIONALIDADES — Grid 2×3 de feature cards
+    ============================================================ -->
+    <section id="funcionalidades" class="section-white" aria-label="Funcionalidades do AntiBet Alerta">
+      <div class="container">
+
+        <div class="section-header reveal">
+          <h2>Tudo que você precisa para se proteger.</h2>
+        </div>
+
+        <div class="features-grid">
+          <article class="feature-card reveal reveal-d1">
+            <span class="feature-icon" aria-hidden="true">🛡️</span>
+            <h3>Detecção inteligente</h3>
+            <p>Múltiplas camadas de análise identificam sites de apostas mesmo quando usam domínios disfarçados ou redirecionamentos. Rápido e preciso, sem consumir dados ou bateria de forma significativa.</p>
+          </article>
+
+          <article class="feature-card reveal reveal-d2">
+            <span class="feature-icon" aria-hidden="true">⏸️</span>
+            <h3>Intervenção de impulso</h3>
+            <p>Tela de pausa com frases de apoio e contagem regressiva. Baseada em técnicas validadas de Terapia Cognitivo-Comportamental (TCC) e Terapia de Aceitação e Compromisso (ACT).</p>
+          </article>
+
+          <article class="feature-card reveal reveal-d3">
+            <span class="feature-icon" aria-hidden="true">🔒</span>
+            <h3>Auto-bloqueio voluntário</h3>
+            <p>Bloqueie um domínio por 1 hora com um toque. Você decidiu — o app apenas cumpre. Nenhuma configuração externa necessária.</p>
+          </article>
+
+          <article class="feature-card reveal reveal-d1">
+            <span class="feature-icon" aria-hidden="true">👥</span>
+            <h3>Parceiro de apoio</h3>
+            <p>Adicione um amigo ou familiar de confiança para receber alertas. Accountability real, não vigilância. Você controla quem é notificado.</p>
+          </article>
+
+          <article class="feature-card reveal reveal-d2">
+            <span class="feature-icon" aria-hidden="true">📊</span>
+            <h3>Relatórios por e-mail</h3>
+            <p>Relatório semanal com seus padrões de acesso. Autoconhecimento para quem quer entender e mudar seu comportamento.</p>
+          </article>
+
+          <article class="feature-card reveal reveal-d3">
+            <span class="feature-icon" aria-hidden="true">🔐</span>
+            <h3>100% privado</h3>
+            <p>Tudo fica no seu dispositivo. Credenciais protegidas com criptografia de nível bancário. Zero rastreamento. Zero anúncios.</p>
+          </article>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         [5] PRIVACIDADE — Destaque com borda verde
+    ============================================================ -->
+    <section id="privacidade" aria-label="Privacidade e proteção de dados">
+      <div class="container">
+
+        <div class="privacy-inner reveal">
+          <h2>Seu celular. Seus dados. Só seus.</h2>
+
+          <ul class="privacy-list" aria-label="Garantias de privacidade">
+            <li class="reveal reveal-d1">
+              <!-- Checkmark SVG inline -->
+              <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+              <span>Armazena apenas o domínio do site (ex: betexemplo.com) — nunca a URL completa, nunca o que você digitou</span>
+            </li>
+            <li class="reveal reveal-d2">
+              <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+              <span>Dados ficam no dispositivo. Nunca saem para nenhum servidor nosso.</span>
+            </li>
+            <li class="reveal reveal-d3">
+              <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+              <span>Sem conta obrigatória. Sem cadastro. Sem rastreamento.</span>
+            </li>
+            <li class="reveal reveal-d4">
+              <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+              <span>Consentimento granular — você escolhe o que ativar (LGPD Art. 8°)</span>
+            </li>
+            <li class="reveal reveal-d5">
+              <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+              <span>Anti-stalkerware: verificação de que você mesmo instalou o app no primeiro uso</span>
+            </li>
+            <li class="reveal reveal-d6">
+              <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+              <span>Código testado extensivamente com testes automatizados. Build auditável.</span>
+            </li>
+          </ul>
+
+          <p class="privacy-highlight reveal reveal-d6">"Somos uma ferramenta de saúde — não uma empresa de dados."</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         [6] TECNOLOGIA — Camadas de detecção + Pilares técnicos
+    ============================================================ -->
+    <section id="tecnologia" class="section-white" aria-label="Tecnologia do AntiBet Alerta">
+      <div class="container">
+
+        <div class="section-header reveal">
+          <h2>Construído para ser confiável.</h2>
+          <p class="subtitle">Transparência técnica é parte do nosso compromisso com você.</p>
+        </div>
+
+        <div class="tech-grid">
+
+          <!-- Esquerda: camadas de detecção animadas -->
+          <div class="tech-card reveal reveal-d1" aria-label="Camadas de detecção">
+            <h3>6 camadas de detecção</h3>
+
+            <div class="layer-row">
+              <div class="layer-meta">
+                <span class="layer-name">Lista negra de sites conhecidos</span>
+                <span class="layer-latency">~instantâneo</span>
+              </div>
+              <div class="layer-track"><div class="layer-bar" data-width="7"></div></div>
+            </div>
+
+            <div class="layer-row">
+              <div class="layer-meta">
+                <span class="layer-name">Análise de padrões do domínio</span>
+                <span class="layer-latency">~10ms</span>
+              </div>
+              <div class="layer-track"><div class="layer-bar" data-width="20"></div></div>
+            </div>
+
+            <div class="layer-row">
+              <div class="layer-meta">
+                <span class="layer-name">Validação de certificado SSL</span>
+                <span class="layer-latency">~100ms</span>
+              </div>
+              <div class="layer-track"><div class="layer-bar" data-width="38"></div></div>
+            </div>
+
+            <div class="layer-row">
+              <div class="layer-meta">
+                <span class="layer-name">Cadeia de redirecionamentos</span>
+                <span class="layer-latency">~200ms</span>
+              </div>
+              <div class="layer-track"><div class="layer-bar" data-width="58"></div></div>
+            </div>
+
+            <div class="layer-row">
+              <div class="layer-meta">
+                <span class="layer-name">Google Safe Browsing</span>
+                <span class="layer-latency">~300ms</span>
+              </div>
+              <div class="layer-track"><div class="layer-bar" data-width="82"></div></div>
+            </div>
+
+            <div class="layer-row">
+              <div class="layer-meta">
+                <span class="layer-name">Análise comportamental</span>
+                <span class="layer-latency">~10ms</span>
+              </div>
+              <div class="layer-track"><div class="layer-bar" data-width="18"></div></div>
+            </div>
+
+            <p class="layer-caption">
+              As camadas param assim que uma ameaça é confirmada, economizando bateria e dados.
+            </p>
+          </div>
+
+          <!-- Direita: pilares técnicos com ícones SVG -->
+          <div class="tech-card reveal reveal-d2" aria-label="Pilares técnicos">
+            <h3>Pilares técnicos</h3>
+            <div class="pillars-list">
+
+              <div class="pillar">
+                <div class="pillar-icon" aria-hidden="true">
+                  <!-- Android robot icon -->
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 18V9a6 6 0 0 1 12 0v9"/>
+                    <path d="M3 16.5A2.5 2.5 0 0 0 5.5 19H6"/>
+                    <path d="M21 16.5A2.5 2.5 0 0 1 18.5 19H18"/>
+                    <path d="M6 18h12"/>
+                    <path d="M9 9h.01M15 9h.01"/>
+                    <path d="M8.5 3.5 7 2M15.5 3.5 17 2"/>
+                  </svg>
+                </div>
+                <div class="pillar-content">
+                  <h4>App nativo Android</h4>
+                  <p>Sem frameworks intermediários — desempenho máximo e acesso direto às APIs de acessibilidade do sistema.</p>
+                </div>
+              </div>
+
+              <div class="pillar">
+                <div class="pillar-icon" aria-hidden="true">
+                  <!-- Lock icon -->
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                  </svg>
+                </div>
+                <div class="pillar-content">
+                  <h4>Criptografia de nível bancário</h4>
+                  <p>Todas as suas configurações e credenciais são criptografadas localmente antes de serem salvas.</p>
+                </div>
+              </div>
+
+              <div class="pillar">
+                <div class="pillar-icon" aria-hidden="true">
+                  <!-- Database icon -->
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <ellipse cx="12" cy="5" rx="9" ry="3"/>
+                    <path d="M3 5v14c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/>
+                    <path d="M3 12c0 1.66 4.03 3 9 3s9-1.34 9-3"/>
+                  </svg>
+                </div>
+                <div class="pillar-content">
+                  <h4>Banco de dados local</h4>
+                  <p>Histórico e eventos ficam no SQLite do seu dispositivo. Nunca sincronizamos com nuvem.</p>
+                </div>
+              </div>
+
+              <div class="pillar">
+                <div class="pillar-icon" aria-hidden="true">
+                  <!-- Checkmark circle icon -->
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="m9 12 2 2 4-4"/>
+                  </svg>
+                </div>
+                <div class="pillar-content">
+                  <h4>Amplamente testado</h4>
+                  <p>Centenas de testes automatizados (unitários e end-to-end) garantem que cada atualização não quebre o que já funciona.</p>
+                </div>
+              </div>
+
+              <div class="pillar">
+                <div class="pillar-icon" aria-hidden="true">
+                  <!-- Palette / Material Design icon -->
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/>
+                    <circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/>
+                    <circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/>
+                    <circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/>
+                    <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/>
+                  </svg>
+                </div>
+                <div class="pillar-content">
+                  <h4>Material Design 3</h4>
+                  <p>Interface seguindo as diretrizes oficiais do Google para Android — familiar, acessível e consistente.</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         [7] APOIO AO USUÁRIO — Recursos de ajuda
+    ============================================================ -->
+    <section id="apoio" aria-label="Apoio ao usuário e recursos de ajuda">
+      <div class="container">
+
+        <div class="section-header reveal">
+          <h2>Você não está sozinho nessa.</h2>
+        </div>
+
+        <div class="support-box reveal reveal-d1">
+          <p>Se você está em crise agora, busque ajuda:</p>
+
+          <div class="support-resource">
+            <span class="res-icon" aria-hidden="true">📞</span>
+            <div>
+              <h4>CVV — 188</h4>
+              <p>24 horas, gratuito, ligação e chat</p>
+            </div>
+          </div>
+
+          <div class="support-resource">
+            <span class="res-icon" aria-hidden="true">🏥</span>
+            <div>
+              <h4>CAPS AD — Centro de Atenção Psicossocial Álcool e Drogas</h4>
+              <p>Procure a unidade da sua cidade em: <a href="https://caps.saude.gov.br" target="_blank" rel="noopener noreferrer">caps.saude.gov.br</a></p>
+            </div>
+          </div>
+
+          <div class="support-resource">
+            <span class="res-icon" aria-hidden="true">🩺</span>
+            <div>
+              <h4>Linha de Cuidado do Ministério da Saúde</h4>
+              <p>Para Problemas com Apostas — lançada em 2025</p>
+            </div>
+          </div>
+        </div>
+
+        <p class="support-disclaimer reveal reveal-d2">
+          O AntiBet Alerta é uma ferramenta de suporte digital — não substitui acompanhamento
+          profissional de saúde mental. Se o comportamento está afetando sua vida, procure um especialista.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         [8] DOWNLOAD / CTA FINAL — Gradiente igual ao hero
+    ============================================================ -->
+    <section id="download" aria-label="Baixar o AntiBet Alerta">
+      <div class="container">
+
+        <h2 class="reveal">Gratuito. Sem anúncios. Sem assinatura. Para sempre.</h2>
+
+        <div class="download-actions">
+          <a href="#" class="btn btn-primary" style="font-size:1.15rem; padding:20px 44px;" aria-label="Baixar no Google Play Store">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22" aria-hidden="true">
+              <path d="M3.18 23.82A1.5 1.5 0 0 1 2 22.38V1.62A1.5 1.5 0 0 1 3.18.18L14.94 12 3.18 23.82Zm2.74-1.6 11.36-6.56-2.82-2.82-8.54 9.38Zm13.3-7.68 2.18-1.26a1.5 1.5 0 0 0 0-2.56L19.22 9.46l-3 3 3 3Zm-2.74-9.38L5.92 1.78l8.54 9.38 2.82-2.82Z"/>
+            </svg>
+            Baixar no Google Play Store
+          </a>
+        </div>
+
+        <p class="download-note">Android 7.0 ou superior · Sem permissões desnecessárias</p>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       [9] FOOTER — Rodapé
+  ============================================================ -->
+  <footer aria-label="Rodapé">
+    <div class="container">
+      <div class="footer-inner">
+
+        <!-- Logo -->
+        <div class="footer-logo" aria-label="AntiBet Alerta">
+          <div class="footer-logo-icon" aria-hidden="true">
+            <img src="antibet-your-shield/icon.png" alt="" />
+          </div>
+          <span class="footer-logo-name">AntiBet Alerta</span>
+        </div>
+
+        <p class="footer-tagline">AntiBet Alerta — Tecnologia a serviço do seu autocontrole.</p>
+
+        <!-- Links -->
+        <div class="footer-links" aria-label="Links do rodapé">
+          <a href="https://privacidade.antibetalerta.com/" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="13" height="13" aria-hidden="true">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+            </svg>
+            Política de Privacidade
+          </a>
+        </div>
+
+        <!-- Meta -->
+        <div class="footer-meta">
+          <p>AntiBet Alerta é software de saúde pública. Desenvolvido no Brasil · Conformidade LGPD · v2.0</p>
+        </div>
+
+        <!-- Legal disclaimer -->
+        <p class="footer-legal">
+          Este app destina-se exclusivamente ao uso pessoal pelo próprio titular do dispositivo.
+          Não é serviço de saúde mental nem substitui acompanhamento profissional.
+          Fontes das estatísticas: Banco Central do Brasil, Unifesp/LENAD III, Ministério da Saúde (2024-2025).
+        </p>
+
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       JAVASCRIPT VANILLA
+       1. Scroll-reveal com IntersectionObserver
+       2. Contadores animados para as estatísticas
+       3. Animação das barras de detecção
+  ============================================================ -->
+  <script>
+    (function () {
+      'use strict';
+
+      /* ----------------------------------------------------------
+         1. SCROLL REVEAL
+         Observa todos os elementos .reveal e adiciona .visible
+         quando eles entram na viewport.
+      ---------------------------------------------------------- */
+      const revealObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              revealObserver.unobserve(entry.target); // anima só uma vez
+            }
+          });
+        },
+        { threshold: 0.12, rootMargin: '0px 0px -32px 0px' }
+      );
+
+      document.querySelectorAll('.reveal').forEach((el) => {
+        revealObserver.observe(el);
+      });
+
+      /* ----------------------------------------------------------
+         2. CONTADORES ANIMADOS
+         Procura elementos com data-counter e anima de 0 até o
+         valor alvo com easing cúbico em ~1500ms.
+      ---------------------------------------------------------- */
+      function animateCounter(el) {
+        const target    = parseInt(el.dataset.counter, 10);
+        const prefix    = el.dataset.prefix  || '';
+        const suffix    = el.dataset.suffix  || '';
+        const duration  = 1500;
+        const startTime = performance.now();
+
+        function step(now) {
+          const elapsed  = now - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          // Ease-out cubic
+          const eased    = 1 - Math.pow(1 - progress, 3);
+          const current  = Math.round(eased * target);
+
+          el.innerHTML = prefix + current.toLocaleString('pt-BR') + suffix;
+
+          if (progress < 1) {
+            requestAnimationFrame(step);
+          }
+        }
+
+        requestAnimationFrame(step);
+      }
+
+      const counterObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              animateCounter(entry.target);
+              counterObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.5 }
+      );
+
+      document.querySelectorAll('[data-counter]').forEach((el) => {
+        counterObserver.observe(el);
+      });
+
+      /* ----------------------------------------------------------
+         3. BARRAS DE DETECÇÃO ANIMADAS
+         Anima a largura das barras (.layer-bar) quando a seção
+         de tecnologia entra na viewport.
+      ---------------------------------------------------------- */
+      const barObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const bars = entry.target.querySelectorAll('.layer-bar');
+              bars.forEach((bar, i) => {
+                const targetWidth = bar.dataset.width || '0';
+                // Stagger each bar by 160ms
+                setTimeout(() => {
+                  bar.style.width = targetWidth + '%';
+                }, i * 160);
+              });
+              barObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.3 }
+      );
+
+      const techCard = document.querySelector('[aria-label="Camadas de detecção"]');
+      if (techCard) barObserver.observe(techCard);
+
+    })();
+  </script>
+
+</body>
+</html>
