@@ -408,9 +408,13 @@
       transform: translateY(-3px);
     }
     .stat-card .stat-icon {
-      font-size: 2.2rem;
       margin-bottom: 16px;
       display: block;
+      color: var(--color-primary);
+    }
+    .stat-card .stat-icon svg {
+      width: 2.2rem;
+      height: 2.2rem;
     }
     .stat-card .stat-value {
       font-size: 1.9rem;
@@ -485,9 +489,15 @@
       gap: 10px;
       margin-bottom: 6px;
     }
-    .step-emoji {
-      font-size: 1.25rem;
-      line-height: 1;
+    .step-icon {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      color: var(--color-primary);
+    }
+    .step-icon svg {
+      width: 1.25rem;
+      height: 1.25rem;
     }
     .step-title {
       font-size: 1.05rem;
@@ -528,10 +538,14 @@
       transform: translateY(-3px);
     }
     .feature-icon {
-      font-size: 2rem;
       margin-bottom: 16px;
       display: block;
+      color: var(--color-primary);
       transition: transform .3s ease;
+    }
+    .feature-icon svg {
+      width: 2rem;
+      height: 2rem;
     }
     .feature-card:hover .feature-icon { transform: scale(1.12); }
     .feature-card h3 {
@@ -696,7 +710,16 @@
       margin-bottom: 20px;
     }
     .support-resource:last-child { margin-bottom: 0; }
-    .support-resource .res-icon { font-size: 1.6rem; flex-shrink: 0; line-height: 1; }
+    .support-resource .res-icon {
+      flex-shrink: 0;
+      display: flex;
+      align-items: flex-start;
+      color: var(--color-primary);
+    }
+    .support-resource .res-icon svg {
+      width: 1.6rem;
+      height: 1.6rem;
+    }
     .support-resource h4 { font-size: 1rem; font-weight: 700; margin-bottom: 2px; }
     .support-resource p, .support-resource a {
       font-size: .9rem;
@@ -958,19 +981,19 @@
         <!-- 3 cards de estatísticas com contadores animados -->
         <div class="stats-grid">
           <article class="stat-card reveal reveal-d1">
-            <span class="stat-icon" aria-hidden="true">💸</span>
+            <span class="stat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 18V6"/></svg></span>
             <span class="stat-value mono" data-counter="30" data-prefix="R$&nbsp;" data-suffix="&nbsp;bilhões">R$&nbsp;0&nbsp;bilhões</span>
             <p>transferidos por PIX todo mês para sites de apostas (Banco Central, 2025)</p>
           </article>
 
           <article class="stat-card reveal reveal-d2">
-            <span class="stat-icon" aria-hidden="true">🧠</span>
+            <span class="stat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.98-3A2.5 2.5 0 0 1 9.5 2Z"/><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-1.98-3A2.5 2.5 0 0 0 14.5 2Z"/></svg></span>
             <span class="stat-value mono" data-counter="11" data-prefix="~" data-suffix="&nbsp;milhões">~0&nbsp;milhões</span>
             <p>de brasileiros com comportamento compulsivo de apostas comprometendo saúde e finanças (LENAD III — Unifesp / FAPESP, 2024)</p>
           </article>
 
           <article class="stat-card reveal reveal-d3">
-            <span class="stat-icon" aria-hidden="true">📈</span>
+            <span class="stat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m22 7-8.5 8.5-5-5L2 17"/><path d="M16 7h6v6"/></svg></span>
             <span class="stat-value mono" data-counter="20" data-suffix="×">0×</span>
             <p>mais atendimentos por transtorno do jogo no SUS em 5 anos (Ministério da Saúde, 2024)</p>
           </article>
@@ -1004,7 +1027,7 @@
           <div class="flow-step reveal reveal-d1">
             <div class="step-body">
               <div class="step-header">
-                <span class="step-emoji" aria-hidden="true">🔍</span>
+                <span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></span>
                 <span class="step-title">Detecta</span>
               </div>
               <p class="step-desc">Você acessa um site pelo Chrome, Firefox ou qualquer app com browser embutido. O AntiBet lê apenas o domínio — nada mais é acessado.</p>
@@ -1014,7 +1037,7 @@
           <div class="flow-step reveal reveal-d2">
             <div class="step-body">
               <div class="step-header">
-                <span class="step-emoji" aria-hidden="true">⏱️</span>
+                <span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span>
                 <span class="step-title">Pausa</span>
               </div>
               <p class="step-desc">Uma tela de intervenção aparece com contagem regressiva de 10 segundos. Técnica de <em>urge surfing</em> da psicologia comportamental (TCC e ACT).</p>
@@ -1024,7 +1047,7 @@
           <div class="flow-step reveal reveal-d3">
             <div class="step-body">
               <div class="step-header">
-                <span class="step-emoji" aria-hidden="true">💪</span>
+                <span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v6l4 2"/><path d="M5 14v.5a7 7 0 0 0 14 0V14"/><path d="M12 11v3"/></svg></span>
                 <span class="step-title">Decide</span>
               </div>
               <p class="step-desc">Você pode fechar, se auto-bloquear por 1 hora ou continuar. A escolha é sempre sua — o app não bloqueia nada sem o seu comando.</p>
@@ -1034,7 +1057,7 @@
           <div class="flow-step reveal reveal-d4">
             <div class="step-body">
               <div class="step-header">
-                <span class="step-emoji" aria-hidden="true">📧</span>
+                <span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg></span>
                 <span class="step-title">Alerta</span>
               </div>
               <p class="step-desc">Você recebe um e-mail registrando o horário. Sem julgamento. Só transparência com você mesmo.</p>
@@ -1044,7 +1067,7 @@
           <div class="flow-step reveal reveal-d5">
             <div class="step-body">
               <div class="step-header">
-                <span class="step-emoji" aria-hidden="true">🤝</span>
+                <span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A3.5 3.5 0 0 0 8.5 8c-.8 0-1.5.3-2 .8"/><path d="M9 18h.01"/><path d="M15 22v-4a3 3 0 0 0-6 0v4"/><path d="M7.5 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A3.5 3.5 0 0 0 1 8c-.8 0-1.5.3-2 .8"/></svg></span>
                 <span class="step-title">Apoio</span>
               </div>
               <p class="step-desc">Opcionalmente, um parceiro de confiança também é notificado. <em>Accountability</em> real, sem vigilância.</p>
@@ -1068,37 +1091,37 @@
 
         <div class="features-grid">
           <article class="feature-card reveal reveal-d1">
-            <span class="feature-icon" aria-hidden="true">🛡️</span>
+            <span class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
             <h3>Detecção inteligente</h3>
             <p>Múltiplas camadas de análise identificam sites de apostas mesmo quando usam domínios disfarçados ou redirecionamentos. Funciona em navegadores e em apps com browser embutido (Instagram, TikTok e similares). Rápido e preciso, sem consumir dados ou bateria de forma significativa.</p>
           </article>
 
           <article class="feature-card reveal reveal-d2">
-            <span class="feature-icon" aria-hidden="true">⏸️</span>
+            <span class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg></span>
             <h3>Intervenção de impulso</h3>
             <p>Tela de pausa com frases de apoio e contagem regressiva. Baseada em técnicas validadas de Terapia Cognitivo-Comportamental (TCC) e Terapia de Aceitação e Compromisso (ACT).</p>
           </article>
 
           <article class="feature-card reveal reveal-d3">
-            <span class="feature-icon" aria-hidden="true">🔒</span>
+            <span class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span>
             <h3>Auto-bloqueio voluntário</h3>
             <p>Bloqueie um domínio por 1 hora com um toque. Você decidiu — o app apenas cumpre. Nenhuma configuração externa necessária.</p>
           </article>
 
           <article class="feature-card reveal reveal-d1">
-            <span class="feature-icon" aria-hidden="true">👥</span>
+            <span class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
             <h3>Parceiro de apoio</h3>
             <p>Adicione um amigo ou familiar de confiança para receber alertas. Accountability real, não vigilância. Você controla quem é notificado.</p>
           </article>
 
           <article class="feature-card reveal reveal-d2">
-            <span class="feature-icon" aria-hidden="true">📊</span>
+            <span class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg></span>
             <h3>Relatórios por e-mail</h3>
             <p>Relatório semanal com seus padrões de acesso. Autoconhecimento para quem quer entender e mudar seu comportamento.</p>
           </article>
 
           <article class="feature-card reveal reveal-d3">
-            <span class="feature-icon" aria-hidden="true">🔐</span>
+            <span class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/></svg></span>
             <h3>100% privado</h3>
             <p>Tudo fica no seu dispositivo. Credenciais protegidas com criptografia de nível bancário. Zero rastreamento. Zero anúncios.</p>
           </article>
@@ -1336,7 +1359,7 @@
           <p>Se você está em crise agora, busque ajuda:</p>
 
           <div class="support-resource">
-            <span class="res-icon" aria-hidden="true">📞</span>
+            <span class="res-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
             <div>
               <h4>CVV — 188</h4>
               <p>24 horas, gratuito, ligação e chat</p>
@@ -1344,7 +1367,7 @@
           </div>
 
           <div class="support-resource">
-            <span class="res-icon" aria-hidden="true">🏥</span>
+            <span class="res-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/><path d="M9 9v.01"/><path d="M9 12v.01"/><path d="M9 15v.01"/><path d="M9 18v.01"/></svg></span>
             <div>
               <h4>CAPS AD — Centro de Atenção Psicossocial Álcool e Drogas</h4>
               <p>Procure a unidade da sua cidade em: <a href="https://caps.saude.gov.br" target="_blank" rel="noopener noreferrer">caps.saude.gov.br</a></p>
@@ -1352,7 +1375,7 @@
           </div>
 
           <div class="support-resource">
-            <span class="res-icon" aria-hidden="true">🩺</span>
+            <span class="res-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></span>
             <div>
               <h4>Linha de Cuidado do Ministério da Saúde</h4>
               <p>Para Problemas com Apostas — lançada em 2025</p>
@@ -1423,7 +1446,7 @@
 
         <!-- Meta -->
         <div class="footer-meta">
-          <p>AntiBet Alerta é software de saúde pública. Desenvolvido no Brasil · Conformidade LGPD · v2.0</p>
+          <p>AntiBet Alerta é software de saúde pública. Desenvolvido no Brasil · Conformidade LGPD · v2.2.1</p>
         </div>
 
         <!-- Legal disclaimer -->
